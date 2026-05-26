@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Furniture Website</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ========================= NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top shadow-sm">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand fw-bold fs-2 text-black" href="#">
+          <img
+            src="assets/Logo.png"
+            class="img-fluid"
+            style="max-width: 180px"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+         <!-- SEARCH -->
+<form
+  class="d-flex align-items-center border-bottom border-dark pb-2 ms-lg-5 me-auto gap-2"
+  style="width: 350px"
+>
+
+  <!-- DROPDOWN -->
+  <select
+    id="categorySearch"
+    class="form-select border-0 shadow-none bg-transparent fw-semibold"
+    style="max-width:120px;"
+  >
+    <option value="all">All</option>
+    <option value="chair">Chair</option>
+    <option value="sofa">Sofa</option>
+    <option value="desk">Desk</option>
+    <option value="lamp">Light</option>
+  </select>
+
+  <!-- SEARCH ICON -->
+  <i class="ri-search-line"></i>
+
+  <!-- INPUT -->
+  <input
+    type="text"
+    id="searchInput"
+    class="form-control border-0 shadow-none bg-transparent p-0"
+    placeholder="Search product"
+  />
+
+</form>
+
+          <!-- MENU -->
+          <ul class="navbar-nav mx-auto gap-lg-3 text-center">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark" href="#">HOME</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fw-semibold text-dark"
+                data-bs-toggle="dropdown"
+                >SHOP</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-dark">ABOUT US</a>
+            </li>
+          </ul>
+
+          <!-- RIGHT -->
+          <div
+            class="d-flex align-items-center gap-4 justify-content-center mt-4 mt-lg-0"
+          >
+            <a
+              class="text-decoration-none text-dark fw-medium d-flex align-items-center gap-1"
+            >
+              <i class="ri-heart-line fs-5"></i> LOVE
+            </a>
+
+            <a
+              class="text-decoration-none text-dark fw-medium d-flex align-items-center gap-1 position-relative"
+            >
+              <i class="ri-shopping-bag-line fs-5"></i> CART
+              <span
+                id="cartCount"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
+              >
+                0
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================= HERO ========================= -->
+    <section class="hero">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <!-- IMAGE -->
+          <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0"></div>
+
+          <!-- CONTENT -->
+          <div class="col-lg-6 text-center text-lg-start">
+            <h6 class="fw-semibold mb-2">WELCOME TO OUR</h6>
+
+            <h1 class="hero-title mb-3">
+              FURNITURE <br />
+              GALLERY
+            </h1>
+
+            <div class="hero-line mb-4"></div>
+
+            <h6 class="fw-semibold mb-2">BROWSE OUR SELECTIONS</h6>
+
+            <p class="text-muted small hero-desc">
+              Featuring sleek designs and innovative materials that seamlessly
+              blend form and function.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     CATEGORY SECTION
+========================= -->
+    <section class="category-section py-5">
+      <div class="container-fluid px-5">
+        <div class="row g-4">
+          <!-- LEFT CARD -->
+          <div class="col-lg-3">
+            <div class="category-card d-flex flex-column">
+              <div class="h-50 w-100 d-flex g-0">
+                <img
+                  class="h-100 w-100"
+                  src="assets/hanginglight2.png"
+                  alt=""
+                />
+                <img
+                  class="h-100 w-100"
+                  src="assets/hanginglight3.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="d-flex flex-column px-4 justify-content-end h-50 pb-5"
+              >
+                <h5 class="fw-bold">HANGING LIGHT</h5>
+                <p class="fw-semibold py-2">
+                  Upgrade your space with our modern hanging light, featuring
+                  sleek lines, energy-efficient LED lighting, and adjustable
+                  height.
+                </p>
+                <span class="fw-semibold"
+                  >View more <img src="assets/Vector.png" alt=""
+                /></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CENTER CARD (DOUBLE WIDTH) -->
+          <div class="col-lg-6">
+            <div class="category-card midcard d-flex flex-column">
+              <div
+                class="d-flex flex-column w-50 text-center justify-content-start h-50 pt-5"
+              >
+                <h5 class="fw-bold">DESIGNED SOFA</h5>
+                <p class="fw-semibold py-2">
+                  Introducing our newest sofa, the perfect combination of style
+                  and comfort, designed to elevate your living space and provide
+                  ultimate relaxation.
+                </p>
+                <span class="fw-semibold"
+                  >View more <img src="assets/Vector.png" alt=""
+                /></span>
+              </div>
+              <div class="h-50 d-flex g-0">
+                <img class="h-100" src="assets/sofaa.png" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT CARD -->
+          <div class="col-lg-3">
+            <div class="category-card d-flex flex-column">
+              <div
+                class="d-flex flex-column px-4 justify-content-start pt-5 h-100"
+              >
+                <h5 class="fw-bold">NOVA CHAIR</h5>
+                <p class="fw-semibold py-2">
+                  a stylish and comfortable addition to any room, with its sleek
+                  design and plush cushions creating the ultimate seating
+                  experience.
+                </p>
+                <span class="fw-semibold"
+                  >View more <img src="assets/Vector.png" alt=""
+                /></span>
+              </div>
+                <div class="h-50 d-flex g-0">
+                <img class="h-100   " src="assets/novachair.png" alt="">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TRUSTED BY -->
+    <!-- TRUSTED BY -->
+    <!-- TRUSTED BY -->
+
+    <section class="py-5 logos">
+  <div class="container">
+ <h3 class="fw-bold mb-4 text-center">TRUSTED BY</h3>
+    <!-- Row 1 -->
+    <div class="row g-2 justify-content-center">
+      
+      <div class="col-6 col-md-2 text-center">
+        <img  src="assets/logo1.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo2.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo3.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo4.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo5.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo6.png" class="img-fluid" alt="">
+      </div>
+
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row g-2 justify-content-center mt-3">
+
+      <div class="col-6 col-md-2  text-center">
+        <img src="assets/logo3.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo6.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo5.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo4.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo1.png" class="img-fluid" alt="">
+      </div>
+
+      <div class="col-6 col-md-2 text-center">
+        <img src="assets/logo2.png" class="img-fluid" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+    <!-- =========================
+        FEATURED PRODUCTS
+    ========================== -->
+
+    <section class="featured-products">
+      <div class="container-fluid px-5">
+        <!-- HEADER -->
+        <div class="text-center mb-5">
+          <h3 class="fw-bold mb-4">FEATURED PRODUCTS</h3>
+
+          <!-- FILTERS -->
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+
+  <button class="filter-btn active" data-category="all">
+    ALL
+  </button>
+
+  <button class="filter-btn" data-category="sale">
+    ON SALE
+  </button>
+
+  <button class="filter-btn" data-category="chair">
+    CHAIR
+  </button>
+
+  <button class="filter-btn" data-category="sofa">
+    SOFA
+  </button>
+
+  
+  <button class="filter-btn" data-category="desk">
+    DESK
+  </button>
+
+  <button class="filter-btn" data-category="light">
+    LIGHT
+  </button>
+
+</div>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="row g-5" id="productGrid"></div>
+      </div>
+    </section>
+
+
+    <!-- why choose us -->
+    <!-- why choose us -->
+    <!-- why choose us -->
+    <!-- why choose us -->
+<section class="py-5 chooseus">
+  <div class="container">
+<h3 class="fw-bold mb-4 text-center">WHY CHOOSE US?  </h3>
+    <!-- ROW 1 -->
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+          
+          <img src="assets/planet-earth 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2">GLOBAL DELIVERY  </h5>
+
+          <p class="text-muted">
+            Experience Hassle-Free Shipping and Seamless Global Connectivity with Our Trustworthy and Efficient Delivery Service, Bringing the World to Your Fingertips!
+           </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+
+          <img src="assets/package-box 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2">FREE SHIPPING  </h5>
+
+          <p class="text-muted">
+ Shop to Your Heart's Content Without Worrying About Shipping Costs: Our Free Shipping Service Delivers Your Purchases with a Smile, Straight to Your Doorstep!          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+
+          <img src="assets/phone 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2">24/7 SUPPORTING</h5>
+
+          <p class="text-muted">
+Shop with Confidence Anytime, Anywhere: Our Free Shipping Service Comes with 24/7 Support to Ensure Your Packages Arrive Safely and On Time!          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row g-4 mt-3">
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+
+          <img src="assets/email 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2"> DAILY EMAIL  </h5>
+
+          <p class="text-muted">
+Stay Up-to-Date with Your Deliveries: Enjoy the Convenience of Daily Email Updates with Our Free Shipping Service, Making Your Online Shopping Experience Even More Enjoyable!          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+
+          <img src="assets/credit-card 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2">EASY PAYMENT  </h5>
+
+          <p class="text-muted">
+Shop and Pay with Ease: Our Free Shipping Service Not Only Delivers Your Packages for Free, but Also Offers Easy Payment Options, Making Your Shopping Experience a Breeze!          </p>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center text-center p-4 h-100">
+
+          <img src="assets/badge (1) 1.png" alt="" class="mb-3" width="60">
+
+          <h5 class="fw-semibold py-2">  MONTHLY  VOUCHER</h5>
+
+          <p class="text-muted">
+More Than Just Free Shipping: Our Service Rewards Your Loyalty with Monthly Vouchers, Giving You More Reasons to Shop and Save on Your Favorite Products!          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- bronze hanging light  -->
+<!-- bronze hanging light  -->
+<!-- bronze hanging light  -->
+<!-- bronze hanging light  -->
+
+<section class="py-5 Bronzesec">
+  <div class="container ">
+    <div class="row align-items-start custom-bronze px-5 py-0 ">
+
+      <!-- LEFT DIV -->
+      <div class="col-md-4 pt-5">
+        <h4 class="fw-bold">MORDERN BRONZE
+HANGING LIGHT</h4>
+
+        <!-- Stars -->
+        <div class="my-2 mb-4">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+           
+        </div>
+
+        <!-- Price -->
+        <p class="mb-0">
+          <span class="text-muted text-decoration-line-through">$3252.41</span>
+        </p>
+        <h5 class="fw-bold">$2352.41</h5>
+      </div>
+
+      <!-- CENTER DIV (IMAGE) -->
+      <div class="col-md-4 text-center position-relative ">
+
+        <img src="assets/bronzelamp.png" class="img-fluid bronzelamp-img">
+
+      </div>
+
+      <!-- RIGHT DIV -->
+      <div class="col-md-4 pt-5 d-flex  flex-column align-items-end">
+        <p class="text-muted text-end ps-5 mb-4">
+          Stunning lighting fixture that combines contemporary style with timeless elegance. Featuring a sleek and minimalist design, this hanging light is crafted from high-quality bronze and finished with a smooth and lustrous surface.
+        </p>
+
+      <button class="btn btn-dark rounded-0  custom-btn">
+  Buy Now
+</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- reviews -->
+<!-- reviews -->
+<!-- reviews -->
+<!-- reviews -->
+<!-- =========================
+        CUSTOMER REVIEWS
+========================== -->
+
+<section class="py-5 bg-white">
+
+    <div class="container-fluid px-5 py-5">
+
+        <!-- HEADING -->
+        <div class="text-center mb-5">
+
+         <h3 class="fw-bold mb-4 text-center">REVIEWD BY CUSTOMERS  </h3>
+
+            <p class="text-muted mx-auto"
+                style="max-width:700px;">
+
+               WHAT OUR CUSTOMERS THINK ABOUT US?
+
+            </p>
+
+        </div>
+
+
+        <!-- REVIEWS -->
+        <div class="row gy-5">
+
+            <!-- REVIEW 1 -->
+            <div class="col-lg-4 col-md-6 text-center">
+
+                <!-- PROFILE -->
+                <div class="mb-4">
+
+                    <img src="assets/Avatar.png"
+                        alt=""
+                        class="rounded-circle object-fit-cover"
+                        width="90"
+                        height="90">
+
+                </div>
+
+             <!-- Stars -->
+        <div class="my-2 mb-4">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+           
+        </div>
+
+                <!-- REVIEW -->
+                <p class="text-black lh-2 mb-4 px-lg-4">
+
+                    The sofa is not only incredibly stylish, but also very comfortable to lounge on. The clean lines and minimalist design make it a perfect fit for my modern living room, and the neutral color scheme allows me to easily incorporate other accent pieces. The sofa is also very sturdy and well-constructed, so I know it will last me for years to come."
+
+                </p>
+
+                <!-- NAME -->
+           <p class="text-muted "> -  Sarah Williams  -</p>
+
+            </div>
+
+
+            <!-- REVIEW 2 -->
+            <div class="col-lg-4 col-md-6 text-center">
+
+                <!-- PROFILE -->
+                <div class="mb-4">
+
+                    <img src="assets/Avatar.png"
+                        alt=""
+                        class="rounded-circle object-fit-cover"
+                        width="90"
+                        height="90">
+
+                </div>
+
+               <!-- Stars -->
+        <div class="my-2 mb-4">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+           
+        </div>
+
+                <!-- REVIEW -->
+                <p class="text-secondary lh-2 mb-4 px-lg-4">
+ The sofa is not only incredibly stylish, but also very comfortable to lounge on. The clean lines and minimalist design make it a perfect fit for my modern living room, and the neutral color scheme allows me to easily incorporate other accent pieces. The sofa is also very sturdy and well-constructed, so I know it will last me for years to come."
+
+                </p>
+
+                <!-- NAME -->
+               
+ <p class="text-muted ">-  Larry Jonhson  -</p>
+            </div>
+
+
+            <!-- REVIEW 3 -->
+            <div class="col-lg-4 col-md-6 mx-md-auto text-center">
+
+                <!-- PROFILE -->
+                <div class="mb-4">
+
+                    <img src="assets/Avatar.png"
+                        alt=""
+                        class="rounded-circle object-fit-cover"
+                        width="90"
+                        height="90">
+
+                </div>
+
+                <!-- Stars -->
+        <div class="my-2 mb-4">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+          <img src="assets/star.png" width="20">
+           
+        </div>
+
+                <!-- REVIEW -->
+                <p class="text-secondary lh-2 mb-4 px-lg-4">
+
+                  The sofa is not only incredibly stylish, but also very comfortable to lounge on. The clean lines and minimalist design make it a perfect fit for my modern living room, and the neutral color scheme allows me to easily incorporate other accent pieces. The sofa is also very sturdy and well-constructed, so I know it will last me for years to come."
+
+
+
+                </p>
+
+                <!-- NAME -->
+                
+<p class="text-muted ">-   Emily Johnson  -</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- footer -->
+<!-- footer -->
+<!-- footer -->
+<!-- footer -->
+<!-- footer -->
+<!-- footer -->
+
+<!-- =========================
+            FOOTER
+========================== -->
+
+<footer class="text-black pt-5">
+
+    <div class="container-fluid px-5 pt-5">
+
+        <!-- FOOTER LINKS -->
+        <div class="row gy-5 pb-5">
+
+            <!-- CUSTOMER SERVICE -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="fw-bold mb-4 text-uppercase">
+
+                    CUSTOMER SERVICE
+
+                </h5>
+
+                <ul class="list-unstyled d-flex flex-column gap-3">
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Help & FAQs
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Return & Refund
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                          Shipping Policy
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                           Customs and Taxes
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                           Customers’s Reviews
+
+                        </a>
+                    </li>
+
+                  
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- COMPANY -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="fw-bold mb-4 text-uppercase">
+
+                    COMPANY
+
+                </h5>
+
+                <ul class="list-unstyled d-flex flex-column gap-3">
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            About Japan with love
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Contact Us
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Special Deals & Offers
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Terms of Service
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Privacy Policy
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- HELP CENTER -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="fw-bold mb-4 text-uppercase">
+
+                    HELP CENTER
+
+                </h5>
+
+                <ul class="list-unstyled d-flex flex-column gap-3">
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Order Information
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Shipping Options
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            International Shipping
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Payment Options
+
+                        </a>
+                    </li>
+
+                    
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- RETURN -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="fw-bold mb-4 text-uppercase">
+
+                    RETURN & WARRANTY
+
+                </h5>
+
+                <ul class="list-unstyled d-flex flex-column gap-3">
+                  
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                           Returns & Exchange Policy
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Return Policy
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Warranty Policy
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Warranty Registration
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-decoration-none text-secondary">
+
+                            Warranty Repair Center
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+         <!-- COPYRIGHT -->
+<div class="border-top border-secondary py-4">
+
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+
+        <!-- LEFT SIDE -->
+        <p class="mb-0 text-secondary text-center text-md-start">
+
+            Furnitur © Copyright 2020, Inc. All rights reserved
+
+        </p>
+
+        <!-- RIGHT SIDE -->
+        <div class="d-flex align-items-center gap-4">
+
+            <!-- SOCIAL MEDIA LOGOS -->
+
+            <a href="#">
+                <img src="assets/fb.png"
+                    alt="facebook"
+                    width="22">
+            </a>
+
+            <a href="#">
+                <img src="assets/Brand.png"
+                    alt="twit"
+                    width="22">
+            </a>
+
+            <a href="#">
+                <img src="assets/insta (1).png"
+                    alt="insta"
+                    width="22">
+            </a>
+
+            <a href="#">
+                <img src="assets/pint.png"
+                    alt="pinterest"
+                    width="22">
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script src="app.js"></script>
+  </body>
+</html>
