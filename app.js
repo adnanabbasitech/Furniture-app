@@ -19,7 +19,7 @@
     category: "light",
     price: 1595.6,
     image: "assets/hanginglight.png",
-    sale: false
+    sale: true
   },
 
   {
@@ -34,7 +34,7 @@
   {
     id: 4,
     title: "LUMIN DESK LAMP",
-    category: "Light",
+    category: "light",
     price: 1477.8,
     image: "assets/desklamp.png",
     sale: false
